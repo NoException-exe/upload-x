@@ -18,7 +18,7 @@ $ npm run start
 $ npm run start:dev
 
 # production mode
-=======
+
 $ npx prisma migrate deploy && npm run start:prod 
 ```
 
