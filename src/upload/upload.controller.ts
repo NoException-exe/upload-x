@@ -5,8 +5,6 @@ import { FileDTO } from './dto/fileDto'
 import { MulterValidator } from './validator/multer.validator'
 import { ApiConsumes } from '@nestjs/swagger'
 
-import * as path from 'path'
-
 @Controller('upload')
 export class UploadController {
   constructor(private readonly uploadService: UploadService) {}

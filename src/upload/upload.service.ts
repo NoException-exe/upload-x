@@ -11,7 +11,7 @@ import { PostgresDTO } from 'src/repositories/postgres/dto/postgresDTO'
 export class UploadService {
   constructor(private readonly postgresRepository: PostgresRepositoryService) {}
 
-  private uploadFolder = './uploads'
+  private readonly uploadFolder = './uploads'
 
   async uploadFile(file: FileDTO): Promise<{ url: string }> {
     const { buffer, mimetype, originalname } = file
