@@ -1,6 +1,6 @@
 ## Description
 
-zip file upload/download api, with nestjs and postgresql
+API created using NestJS and PostgreSQL, with functionalities for uploading and downloading ZIP files. Documentation is done with Swagger, making it easier to understand and use the API.
 
 ## Installation
 
@@ -18,13 +18,11 @@ $ npm run start
 $ npm run start:dev
 
 # production mode
-<<<<<<< HEAD
-$ npx prisma migrate deploy && npm run start:prod
-=======
+
 $ npx prisma migrate deploy && npm run start:prod 
 ```
 
-## Test app
+## Test app with Swagger
 
 ```
 http://localhost:3000/docs
