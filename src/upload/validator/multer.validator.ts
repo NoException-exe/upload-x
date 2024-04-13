@@ -7,8 +7,6 @@ export class MulterValidator implements PipeTransform<FileDTO> {
   private readonly maxSize = 50 * 1024 * 1024 // 50 MB
 
   transform(file: FileDTO) {
-    console.log(file)
-
     if (!file) {
       throw new BadRequestException('You need send a file')
     }
