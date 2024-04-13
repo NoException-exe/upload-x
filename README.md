@@ -20,3 +20,9 @@ $ npm run start:dev
 # production mode
 $ npx prisma migrate deploy && npm run start:prod 
 ```
+
+## Test app
+
+```
+http://localhost:3000/docs
+```
