@@ -4,7 +4,7 @@ import * as crypto from 'crypto'
 
 import { Injectable } from '@nestjs/common'
 import { FileDTO } from './dto/fileDto'
-import { PostgresRepositoryService } from './../repositories/postgres/postgres-repository.service'
+import { PostgresRepositoryService } from '../../repositories/postgres/postgres-repository.service'
 import { PostgresDTO } from 'src/repositories/postgres/dto/postgresDTO'
 
 @Injectable()

@@ -1,10 +1,11 @@
 import { PipeTransform } from '@nestjs/common'
 import { BadRequestException } from '@nestjs/common/exceptions/bad-request.exception'
 import { FileDTO } from '../dto/fileDto'
+import * as data from '../../../../app.config.json'
 
 export class MulterValidator implements PipeTransform<FileDTO> {
-  private readonly allowedTypes = ['application/zip', 'application/x-zip-compressed']
-  private readonly maxSize = 50 * 1024 * 1024 // 50 MB
+  private readonly allowedTypes = data.allowedTypes
+  private readonly maxSize = data.maxSize * 1024 * 1024 // calculate max size in megabytes
 
   transform(file: FileDTO) {
     if (!file) {
@@ -16,7 +17,7 @@ export class MulterValidator implements PipeTransform<FileDTO> {
     }
 
     if (!this.allowedTypes.includes(file.mimetype)) {
-      throw new BadRequestException('Invalid file type. Only zip files are allowed')
+      throw new BadRequestException(`Invalid file type. Only [${data.allowedTypes.map((name) => name)}] are allowed`)
     }
 
     return file

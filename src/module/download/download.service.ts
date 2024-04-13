@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 import { Injectable, NotFoundException } from '@nestjs/common'
-import { PostgresRepositoryService } from './../repositories/postgres/postgres-repository.service'
+import { PostgresRepositoryService } from '../../repositories/postgres/postgres-repository.service'
 import { Response } from 'express'
 
 @Injectable()

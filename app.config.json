@@ -1,0 +1,4 @@
+{
+  "allowedTypes": ["application/zip", "application/x-zip-compressed"],
+  "maxSize": 50
+}

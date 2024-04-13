@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { PrismaService } from 'src/prisma/prisma.service'
+import { PrismaService } from '../../lib/prisma/prisma.service'
 import { PostgresDTO } from './dto/postgresDTO'
 import { IPostgresRepository } from './postgres-repository.interface'
 
