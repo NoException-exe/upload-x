@@ -3,10 +3,12 @@ import { BadRequestException } from '@nestjs/common/exceptions/bad-request.excep
 import { FileDTO } from '../dto/fileDto'
 
 export class MulterValidator implements PipeTransform<FileDTO> {
-  private readonly allowedTypes = ['application/zip']
+  private readonly allowedTypes = ['application/zip', 'application/x-zip-compressed']
   private readonly maxSize = 50 * 1024 * 1024 // 50 MB
 
   transform(file: FileDTO) {
+    console.log(file)
+
     if (!file) {
       throw new BadRequestException('You need send a file')
     }
