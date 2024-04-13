@@ -1,6 +1,6 @@
 ## Description
 
-zip file upload/download api, with nestjs and postgresql
+zip file upload/download api, with nestjs and postgresql & swagger for docs
 
 ## Installation
 
