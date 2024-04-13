@@ -22,7 +22,6 @@ $ npm run start:dev
 $ npx prisma migrate deploy && npm run start:prod
 =======
 $ npx prisma migrate deploy && npm run start:prod 
->>>>>>> ac3c880b968c645d3d116d5641f6eb244d9740d5
 ```
 
 ## Test app
