@@ -1,6 +1,6 @@
 ## Description
 
-zip file upload/download api, with nestjs and postgresql & swagger for docs
+API created using NestJS and PostgreSQL, with functionalities for uploading and downloading ZIP files. Documentation is done with Swagger, making it easier to understand and use the API.
 
 ## Installation
 
