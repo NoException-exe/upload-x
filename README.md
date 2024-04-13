@@ -23,7 +23,7 @@ $ npx prisma migrate deploy && npm run start:prod
 ```
 
 ## Config 
-In this app.config.json you can add the Types you want to accept upload. and the maximum file size is in mega bytes, by default it only accepts zip files with a size of 50mb
+In this `app.config.json` you can add the Types you want to accept upload. and the maximum file size is in mega bytes, by default it only accepts zip files with a size of 50mb
 ```
 {
   "allowedTypes": ["application/zip", "application/x-zip-compressed"],
