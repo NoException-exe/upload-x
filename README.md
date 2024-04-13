@@ -18,13 +18,11 @@ $ npm run start
 $ npm run start:dev
 
 # production mode
-<<<<<<< HEAD
-$ npx prisma migrate deploy && npm run start:prod
 =======
 $ npx prisma migrate deploy && npm run start:prod 
 ```
 
-## Test app
+## Test app with Swagger
 
 ```
 http://localhost:3000/docs
