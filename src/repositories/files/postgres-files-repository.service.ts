@@ -5,8 +5,8 @@ import { IPostgresFilesRepository } from './interface/postgres-files-repository.
 
 @Injectable()
 export class PostgresFilesRepositoryService implements IPostgresFilesRepository {
-  constructor(private readonly prisma: PrismaService) {}
-  async findFile(id: string): Promise<FilesRepositoryDTO | null> {
+  public constructor(private readonly prisma: PrismaService) {}
+  public async findFile(id: string): Promise<FilesRepositoryDTO | null> {
     return await this.prisma.files.findUnique({
       where: {
         reference_code: id,
@@ -14,7 +14,7 @@ export class PostgresFilesRepositoryService implements IPostgresFilesRepository 
     })
   }
 
-  async create(data: FilesRepositoryDTO): Promise<FilesRepositoryDTO> {
+  public async create(data: FilesRepositoryDTO): Promise<FilesRepositoryDTO> {
     return await this.prisma.files.create({
       data: {
         ...data,

@@ -4,10 +4,10 @@ import { Response } from 'express'
 
 @Controller('download')
 export class DownloadController {
-  constructor(private readonly downloadService: DownloadService) {}
+  public constructor(private readonly downloadService: DownloadService) {}
 
   @Get(':id')
-  async downloadFile(@Param('id') id: string, @Res() res: Response) {
+  public async downloadFile(@Param('id') id: string, @Res() res: Response): Promise<void> {
     await this.downloadService.download(id, res)
   }
 }

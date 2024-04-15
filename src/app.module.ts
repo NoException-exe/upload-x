@@ -5,6 +5,7 @@ import { PostgresFilesRepositoryModule } from './repositories/files/postgres-fil
 import { DownloadModule } from './module/download/download.module'
 import { PostgresUsersRepositoryModule } from './repositories/users/postgres-users-repository.module'
 import { UserModule } from './module/user/user.module'
+import { AuthModule } from './module/auth/auth.module'
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { UserModule } from './module/user/user.module'
     DownloadModule,
     PostgresUsersRepositoryModule,
     UserModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],

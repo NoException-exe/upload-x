@@ -7,7 +7,7 @@ import { ApiBody, ApiConsumes } from '@nestjs/swagger'
 
 @Controller('upload')
 export class UploadController {
-  constructor(private readonly uploadService: UploadService) {}
+  public constructor(private readonly uploadService: UploadService) {}
 
   @Post()
   @UseInterceptors(FileInterceptor('file'))
@@ -24,7 +24,9 @@ export class UploadController {
       },
     },
   })
-  async uploadFile(@UploadedFile() file: FileDTO) {
+  public async uploadFile(@UploadedFile() file: FileDTO): Promise<{
+    url: string
+  }> {
     const response = await this.uploadService.uploadFile(file)
 
     return {

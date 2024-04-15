@@ -7,11 +7,11 @@ import { Response } from 'express'
 
 @Injectable()
 export class DownloadService {
-  constructor(private readonly postgresRepository: PostgresFilesRepositoryService) {}
+  public constructor(private readonly postgresRepository: PostgresFilesRepositoryService) {}
 
   private readonly downloadFolder = './uploads'
 
-  async download(param: string, res: Response) {
+  public async download(param: string, res: Response): Promise<void> {
     const findFile = await this.postgresRepository.findFile(param)
 
     if (!findFile) {

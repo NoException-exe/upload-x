@@ -6,8 +6,8 @@ import { PostgresUsersRepositoryService } from 'src/repositories/users/postgres-
 
 @Injectable()
 export class UserService {
-  constructor(private readonly postgresRepository: PostgresUsersRepositoryService) {}
-  async create(createUserDto: CreateUserDto) {
+  public constructor(private readonly postgresRepository: PostgresUsersRepositoryService) {}
+  public async create(createUserDto: CreateUserDto): Promise<void> {
     const { email, name, password } = createUserDto
 
     const findUser = await this.postgresRepository.find(email)
@@ -16,10 +16,12 @@ export class UserService {
       throw new ConflictException('User already exists')
     }
 
+    const encryptedPassword = await this.hashPassword(password)
+
     const data: CreateUserDto = {
       email,
       name,
-      password: await this.hashPassword(password),
+      password: encryptedPassword,
     }
 
     await this.postgresRepository.create(data)

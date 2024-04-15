@@ -9,11 +9,11 @@ import { FilesRepositoryDTO } from 'src/repositories/files/dto/filesRepositoryDT
 
 @Injectable()
 export class UploadService {
-  constructor(private readonly postgresRepository: PostgresFilesRepositoryService) {}
+  public constructor(private readonly postgresRepository: PostgresFilesRepositoryService) {}
 
   private readonly uploadFolder = './uploads'
 
-  async uploadFile(file: FileDTO): Promise<{ url: string }> {
+  public async uploadFile(file: FileDTO): Promise<{ url: string }> {
     const { buffer, mimetype, originalname } = file
 
     const fileName = `${Date.now()}-${originalname}`

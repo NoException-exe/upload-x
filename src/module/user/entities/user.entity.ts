@@ -1,6 +1,6 @@
 export class User {
-  id?: number
-  name: string
-  email: string
-  password: string
+  public id?: number
+  public name: string
+  public email: string
+  public password: string
 }
