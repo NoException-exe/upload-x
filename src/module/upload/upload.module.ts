@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common'
 import { UploadService } from './upload.service'
 import { UploadController } from './upload.controller'
-import { PostgresRepositoryModule } from '../../repositories/postgres/postgres-repository.module'
+import { PostgresFilesRepositoryModule } from '../../repositories/files/postgres-files-repository.module'
 
 @Module({
-  imports: [PostgresRepositoryModule],
+  imports: [PostgresFilesRepositoryModule],
   controllers: [UploadController],
   providers: [UploadService],
 })

@@ -5,12 +5,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
 
-  const config = new DocumentBuilder()
-    .setTitle('Upload-x')
-    .setDescription('Upload-x API description')
-    .setVersion('1.0')
-    .build()
-
+  const config = new DocumentBuilder().setTitle('Upload-x').setVersion('1.0').build()
   const document = SwaggerModule.createDocument(app, config)
   SwaggerModule.setup('docs', app, document)
 

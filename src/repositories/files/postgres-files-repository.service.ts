@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common'
 import { PrismaService } from '../../lib/prisma/prisma.service'
-import { PostgresDTO } from './dto/postgresDTO'
-import { IPostgresRepository } from './postgres-repository.interface'
+import { FilesDTO } from './dto/FilesDTO'
+import { IPostgresFilesRepository } from './interface/postgres-files-repository.interface'
 
 @Injectable()
-export class PostgresRepositoryService implements IPostgresRepository {
+export class PostgresFilesRepositoryService implements IPostgresFilesRepository {
   constructor(private readonly prisma: PrismaService) {}
-  async findFile(id: string): Promise<PostgresDTO | null> {
+  async findFile(id: string): Promise<FilesDTO | null> {
     return await this.prisma.files.findUnique({
       where: {
         reference_code: id,
@@ -14,7 +14,7 @@ export class PostgresRepositoryService implements IPostgresRepository {
     })
   }
 
-  async create(data: PostgresDTO): Promise<PostgresDTO> {
+  async create(data: FilesDTO): Promise<FilesDTO> {
     return await this.prisma.files.create({
       data: {
         ...data,

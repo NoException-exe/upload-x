@@ -1,4 +1,4 @@
-export type PostgresDTO = {
+export type FilesDTO = {
   original_name: string
   saved_name: string
   extension_name: string

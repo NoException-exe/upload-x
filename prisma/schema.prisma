@@ -18,3 +18,12 @@ model Files {
 
   @@map("files_uploaded")
 }
+
+model User {
+  id String @unique @default(uuid())
+  name String
+  email String
+  password String
+
+  @@map("users")
+}
