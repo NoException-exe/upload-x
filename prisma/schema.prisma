@@ -7,22 +7,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Files {
-  id String @unique @default(uuid())
-  original_name String
-  saved_name String
+  id             String   @unique @default(uuid())
+  original_name  String
+  saved_name     String
   extension_name String
-  reference_code String @unique
-  created_at DateTime @default(now())
+  reference_code String   @unique
+  created_at     DateTime @default(now())
 
   @@map("files_uploaded")
 }
 
 model User {
-  id String @unique @default(uuid())
-  name String
-  email String
+  id       String @unique @default(uuid())
+  name     String
+  email    String @unique
   password String
 
   @@map("users")

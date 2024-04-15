@@ -5,7 +5,7 @@ import * as crypto from 'crypto'
 import { Injectable } from '@nestjs/common'
 import { FileDTO } from './dto/fileDto'
 import { PostgresFilesRepositoryService } from '../../repositories/files/postgres-files-repository.service'
-import { FilesDTO } from 'src/repositories/files/dto/FilesDTO'
+import { FilesRepositoryDTO } from 'src/repositories/files/dto/filesRepositoryDTO'
 
 @Injectable()
 export class UploadService {
@@ -20,7 +20,7 @@ export class UploadService {
 
     await this.saveFile(fileName, buffer)
 
-    const data: FilesDTO = {
+    const data: FilesRepositoryDTO = {
       saved_name: fileName,
       extension_name: mimetype,
       original_name: originalname,

@@ -1,6 +1,6 @@
-import { FilesDTO } from '../dto/FilesDTO'
+import { FilesRepositoryDTO } from '../dto/filesRepositoryDTO'
 
 export interface IPostgresFilesRepository {
-  create(data: FilesDTO): Promise<FilesDTO>
-  findFile(id: string): Promise<FilesDTO | null>
+  create(data: FilesRepositoryDTO): Promise<FilesRepositoryDTO>
+  findFile(id: string): Promise<FilesRepositoryDTO | null>
 }
