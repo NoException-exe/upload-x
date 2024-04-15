@@ -7,7 +7,7 @@ import { PrismaService } from 'src/lib/prisma/prisma.service'
 export class PostgresUsersRepositoryService implements IPostgresUsersRepository {
   public constructor(private readonly prisma: PrismaService) {}
 
-  public async find(email: string): Promise<UsersDTO | null> {
+  public async findByEmail(email: string): Promise<UsersDTO | null> {
     return await this.prisma.user.findUnique({
       where: {
         email: email,

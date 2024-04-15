@@ -10,7 +10,7 @@ export class UserService {
   public async create(createUserDto: CreateUserDto): Promise<void> {
     const { email, name, password } = createUserDto
 
-    const findUser = await this.postgresRepository.find(email)
+    const findUser = await this.postgresRepository.findByEmail(email)
 
     if (findUser) {
       throw new ConflictException('User already exists')

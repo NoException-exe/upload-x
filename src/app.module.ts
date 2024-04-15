@@ -6,6 +6,9 @@ import { DownloadModule } from './module/download/download.module'
 import { PostgresUsersRepositoryModule } from './repositories/users/postgres-users-repository.module'
 import { UserModule } from './module/user/user.module'
 import { AuthModule } from './module/auth/auth.module'
+import { AppService } from './app.service'
+import { APP_GUARD } from '@nestjs/core'
+import { JwtAuthGuard } from './module/auth/guards/jwt-auth-guard'
 
 @Module({
   imports: [
@@ -18,6 +21,12 @@ import { AuthModule } from './module/auth/auth.module'
     AuthModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: JwtAuthGuard,
+    },
+  ],
 })
 export class AppModule {}
